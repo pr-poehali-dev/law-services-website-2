@@ -86,33 +86,72 @@ export default function Index() {
         <div className="absolute top-0 bottom-0 right-[8%] w-px" style={{ background: 'linear-gradient(to bottom, transparent, rgba(200,163,95,0.07), transparent)' }} />
         <div className="absolute bottom-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(to right, transparent, rgba(200,163,95,0.35), transparent)' }} />
 
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-10 pt-28 pb-20 w-full">
-          <div className="max-w-3xl">
-            <SectionTag label="Таганрог · Ростовская область · Вся Россия" />
-            <h1 className="font-cormorant font-semibold text-white leading-[1.08] mb-6" style={{ fontSize: 'clamp(36px, 5.5vw, 68px)' }}>
-              Оказываем юридическую помощь бизнесу и гражданам в Таганроге и по всей России с формированием правовой позиции и доведением до результата
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-10 pt-32 pb-24 w-full">
+          <div className="max-w-4xl">
+
+            {/* Geography tag */}
+            <div className="flex items-center gap-3 mb-10">
+              <div className="w-8 h-px" style={{ backgroundColor: G }} />
+              <span className="font-golos text-[11px] tracking-[0.3em] uppercase" style={{ color: G }}>
+                Таганрог · Ростовская область · Вся Россия
+              </span>
+            </div>
+
+            {/* H1 — главный тезис */}
+            <h1 className="font-cormorant font-semibold text-white leading-[1.1] mb-5"
+              style={{ fontSize: 'clamp(38px, 5.2vw, 72px)' }}>
+              Юридическая помощь бизнесу и гражданам
             </h1>
-            <p className="font-golos leading-relaxed mb-8" style={{ color: PROSE, fontSize: '16px' }}>
-              Суды, споры, договоры, банкротство, защита от убытков и взыскание задолженности.<br />
-              Работаем под задачу: <span style={{ color: G }}>анализ → стратегия → результат</span>
-            </p>
-            <ul className="flex flex-col gap-2.5 mb-10">
+
+            {/* H2 — уточнение */}
+            <h2 className="font-cormorant font-normal leading-snug mb-8"
+              style={{ fontSize: 'clamp(20px, 2.5vw, 32px)', color: 'rgba(200,163,95,0.85)' }}>
+              С формированием правовой позиции и доведением до результата
+            </h2>
+
+            {/* Разделитель */}
+            <div className="flex items-center gap-4 mb-8">
+              <div className="w-12 h-px" style={{ backgroundColor: 'rgba(200,163,95,0.3)' }} />
+              <p className="font-golos text-[15px] leading-relaxed" style={{ color: PROSE }}>
+                Суды · Споры · Договоры · Банкротство · Взыскание задолженности
+              </p>
+            </div>
+
+            {/* H3 — формула работы */}
+            <h3 className="font-golos font-medium mb-10 tracking-wide"
+              style={{ fontSize: '14px', color: MUTED }}>
+              Работаем под задачу:&nbsp;
+              <span className="font-semibold" style={{ color: G }}>Анализ</span>
+              <span style={{ color: 'rgba(200,163,95,0.4)' }}> → </span>
+              <span className="font-semibold" style={{ color: G }}>Стратегия</span>
+              <span style={{ color: 'rgba(200,163,95,0.4)' }}> → </span>
+              <span className="font-semibold" style={{ color: G }}>Результат</span>
+            </h3>
+
+            {/* Маркеры — в 2 колонки */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-3.5 mb-12">
               {[
-                'Работаем по Таганрогу, Ростовской области и РФ',
-                'Чёткая правовая позиция до начала работы',
-                'Ведём дело до результата, а не процесса ради процесса',
-                'Прозрачные условия и договор',
+                { icon: 'MapPin', text: 'Работаем по Таганрогу, РО и всей России' },
+                { icon: 'FileCheck', text: 'Прозрачные условия и договор' },
+                { icon: 'Target', text: 'Правовая позиция до начала работы' },
+                { icon: 'TrendingUp', text: 'Ведём дело до результата, не процесса' },
               ].map((m) => (
-                <li key={m} className="flex items-center gap-3">
-                  <div className="w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: G }} />
-                  <span className="font-golos text-[14px]" style={{ color: PROSE }}>{m}</span>
-                </li>
+                <div key={m.text} className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-sm flex items-center justify-center shrink-0"
+                    style={{ backgroundColor: 'rgba(200,163,95,0.1)' }}>
+                    <Icon name={m.icon} size={14} style={{ color: G }} />
+                  </div>
+                  <span className="font-golos text-[13px]" style={{ color: PROSE }}>{m.text}</span>
+                </div>
               ))}
-            </ul>
+            </div>
+
+            {/* CTA кнопки */}
             <div className="flex flex-wrap gap-4">
               <BtnPrimary to="/contacts">Получить консультацию</BtnPrimary>
               <BtnSecondary to="/contacts">Разобрать мою ситуацию</BtnSecondary>
             </div>
+
           </div>
         </div>
       </section>

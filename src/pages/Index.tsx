@@ -86,70 +86,110 @@ export default function Index() {
         <div className="absolute top-0 bottom-0 right-[8%] w-px" style={{ background: 'linear-gradient(to bottom, transparent, rgba(200,163,95,0.07), transparent)' }} />
         <div className="absolute bottom-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(to right, transparent, rgba(200,163,95,0.35), transparent)' }} />
 
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-10 pt-32 pb-24 w-full">
-          <div className="max-w-4xl">
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-10 pt-28 pb-0 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end min-h-[calc(100vh-7rem)]">
 
-            {/* Geography tag */}
-            <div className="flex items-center gap-3 mb-10">
-              <div className="w-8 h-px" style={{ backgroundColor: G }} />
-              <span className="font-golos text-[11px] tracking-[0.3em] uppercase" style={{ color: G }}>
-                Таганрог · Ростовская область · Вся Россия
-              </span>
-            </div>
+            {/* LEFT — текст */}
+            <div className="py-10 lg:py-20">
 
-            {/* H1 — главный тезис */}
-            <h1 className="font-cormorant font-semibold text-white leading-[1.1] mb-5"
-              style={{ fontSize: 'clamp(38px, 5.2vw, 72px)' }}>
-              Юридическая помощь бизнесу и гражданам
-            </h1>
+              {/* Geography tag */}
+              <div className="flex items-center gap-3 mb-10">
+                <div className="w-8 h-px" style={{ backgroundColor: G }} />
+                <span className="font-golos text-[11px] tracking-[0.3em] uppercase" style={{ color: G }}>
+                  Таганрог · Ростовская область · Вся Россия
+                </span>
+              </div>
 
-            {/* H2 — уточнение */}
-            <h2 className="font-cormorant font-normal leading-snug mb-8"
-              style={{ fontSize: 'clamp(20px, 2.5vw, 32px)', color: 'rgba(200,163,95,0.85)' }}>
-              С формированием правовой позиции и доведением до результата
-            </h2>
+              {/* H1 */}
+              <h1 className="font-cormorant font-semibold text-white leading-[1.08] mb-5"
+                style={{ fontSize: 'clamp(36px, 4.5vw, 64px)' }}>
+                Юридическая помощь бизнесу и гражданам
+              </h1>
 
-            {/* Разделитель */}
-            <div className="flex items-center gap-4 mb-8">
-              <div className="w-12 h-px" style={{ backgroundColor: 'rgba(200,163,95,0.3)' }} />
-              <p className="font-golos text-[15px] leading-relaxed" style={{ color: PROSE }}>
-                Суды · Споры · Договоры · Банкротство · Взыскание задолженности
-              </p>
-            </div>
+              {/* H2 */}
+              <h2 className="font-cormorant font-normal leading-snug mb-8"
+                style={{ fontSize: 'clamp(18px, 2.2vw, 28px)', color: 'rgba(200,163,95,0.85)' }}>
+                С формированием правовой позиции и доведением до результата
+              </h2>
 
-            {/* H3 — формула работы */}
-            <h3 className="font-golos font-medium mb-10 tracking-wide"
-              style={{ fontSize: '14px', color: MUTED }}>
-              Работаем под задачу:&nbsp;
-              <span className="font-semibold" style={{ color: G }}>Анализ</span>
-              <span style={{ color: 'rgba(200,163,95,0.4)' }}> → </span>
-              <span className="font-semibold" style={{ color: G }}>Стратегия</span>
-              <span style={{ color: 'rgba(200,163,95,0.4)' }}> → </span>
-              <span className="font-semibold" style={{ color: G }}>Результат</span>
-            </h3>
+              {/* Разделитель */}
+              <div className="flex items-center gap-4 mb-7">
+                <div className="w-10 h-px" style={{ backgroundColor: 'rgba(200,163,95,0.3)' }} />
+                <p className="font-golos text-[14px]" style={{ color: PROSE }}>
+                  Суды · Споры · Договоры · Банкротство · Взыскание
+                </p>
+              </div>
 
-            {/* Маркеры — в 2 колонки */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-3.5 mb-12">
-              {[
-                { icon: 'MapPin', text: 'Работаем по Таганрогу, РО и всей России' },
-                { icon: 'FileCheck', text: 'Прозрачные условия и договор' },
-                { icon: 'Target', text: 'Правовая позиция до начала работы' },
-                { icon: 'TrendingUp', text: 'Ведём дело до результата, не процесса' },
-              ].map((m) => (
-                <div key={m.text} className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-sm flex items-center justify-center shrink-0"
-                    style={{ backgroundColor: 'rgba(200,163,95,0.1)' }}>
-                    <Icon name={m.icon} size={14} style={{ color: G }} />
+              {/* H3 — формула */}
+              <h3 className="font-golos font-medium mb-9 tracking-wide"
+                style={{ fontSize: '13px', color: MUTED }}>
+                Работаем под задачу:&nbsp;
+                <span className="font-semibold" style={{ color: G }}>Анализ</span>
+                <span style={{ color: 'rgba(200,163,95,0.35)' }}> → </span>
+                <span className="font-semibold" style={{ color: G }}>Стратегия</span>
+                <span style={{ color: 'rgba(200,163,95,0.35)' }}> → </span>
+                <span className="font-semibold" style={{ color: G }}>Результат</span>
+              </h3>
+
+              {/* Маркеры */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 mb-11">
+                {[
+                  { icon: 'MapPin', text: 'Работаем по Таганрогу, РО и всей России' },
+                  { icon: 'FileCheck', text: 'Прозрачные условия и договор' },
+                  { icon: 'Target', text: 'Правовая позиция до начала работы' },
+                  { icon: 'TrendingUp', text: 'Ведём дело до результата, не процесса' },
+                ].map((m) => (
+                  <div key={m.text} className="flex items-center gap-3">
+                    <div className="w-7 h-7 rounded-sm flex items-center justify-center shrink-0"
+                      style={{ backgroundColor: 'rgba(200,163,95,0.1)' }}>
+                      <Icon name={m.icon} size={13} style={{ color: G }} />
+                    </div>
+                    <span className="font-golos text-[13px]" style={{ color: PROSE }}>{m.text}</span>
                   </div>
-                  <span className="font-golos text-[13px]" style={{ color: PROSE }}>{m.text}</span>
-                </div>
-              ))}
+                ))}
+              </div>
+
+              {/* CTA */}
+              <div className="flex flex-wrap gap-4">
+                <BtnPrimary to="/contacts">Получить консультацию</BtnPrimary>
+                <BtnSecondary to="/contacts">Разобрать мою ситуацию</BtnSecondary>
+              </div>
+
             </div>
 
-            {/* CTA кнопки */}
-            <div className="flex flex-wrap gap-4">
-              <BtnPrimary to="/contacts">Получить консультацию</BtnPrimary>
-              <BtnSecondary to="/contacts">Разобрать мою ситуацию</BtnSecondary>
+            {/* RIGHT — фото */}
+            <div className="hidden lg:flex items-end justify-center relative h-full">
+              {/* Золотая рамка-акцент за фото */}
+              <div
+                className="absolute bottom-0 right-6"
+                style={{
+                  width: '88%',
+                  height: '92%',
+                  border: '1px solid rgba(200,163,95,0.2)',
+                  borderRadius: '2px',
+                  pointerEvents: 'none',
+                  zIndex: 0,
+                }}
+              />
+              {/* Градиент снизу — плавный переход в фон */}
+              <div
+                className="absolute bottom-0 left-0 right-0 z-10"
+                style={{
+                  height: '220px',
+                  background: `linear-gradient(to top, #0B1F3A 0%, transparent 100%)`,
+                }}
+              />
+              <img
+                src="https://cdn.poehali.dev/projects/0d134cb7-7343-460d-aae4-64c5093bf8df/bucket/470457f9-72cd-40e9-a5ab-01c608cfeb45.jpg"
+                alt="Юрист Право Привилегия"
+                className="relative z-[5] object-cover object-top w-full"
+                style={{
+                  maxHeight: 'calc(100vh - 72px)',
+                  objectPosition: 'center top',
+                  maskImage: 'linear-gradient(to top, transparent 0%, black 18%)',
+                  WebkitMaskImage: 'linear-gradient(to top, transparent 0%, black 18%)',
+                }}
+              />
             </div>
 
           </div>

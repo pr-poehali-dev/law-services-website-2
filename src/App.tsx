@@ -7,8 +7,11 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Index from "./pages/Index";
 import About from "./pages/About";
+import Practice from "./pages/Practice";
 import Services from "./pages/Services";
 import Cases from "./pages/Cases";
+import HowWeWork from "./pages/HowWeWork";
+import Pricing from "./pages/Pricing";
 import Blog from "./pages/Blog";
 import Contacts from "./pages/Contacts";
 import NotFound from "./pages/NotFound";
@@ -25,8 +28,11 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
+          <Route path="/practice" element={<Practice />} />
           <Route path="/services" element={<Services />} />
           <Route path="/cases" element={<Cases />} />
+          <Route path="/how-we-work" element={<HowWeWork />} />
+          <Route path="/pricing" element={<Pricing />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="*" element={<NotFound />} />
